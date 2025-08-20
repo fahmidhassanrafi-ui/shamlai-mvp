@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-indigo: #1D2A44;   /* headers, navigation */
+  --color-emerald: #2ECC71;  /* success/growth, primary highlights */
+  --color-coral:  #FF6F61;   /* primary CTA buttons */
+  --color-gray-0: #F4F5F7;   /* backgrounds */
+  --color-gray-9: #333333;   /* text */
+  --color-gold:   #FBC02D;   /* accent/alerts */
+
+  --radius: 12px;
+}
+
+html, body {
+  height: 100%;
+  background: var(--color-gray-0);
+  color: var(--color-gray-9);
+  font-feature-settings: "cv02","cv03","cv04","cv11";
+}
+
+a { @apply text-indigo-600 underline; }
+
+:where(button, a, input, [role="button"], [tabindex]) {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigoBrand;
+}
+
+.card {
+  @apply bg-white dark:bg-neutral-900 rounded-2xl shadow-sm border border-neutral-200/70 dark:border-neutral-800;
+}
